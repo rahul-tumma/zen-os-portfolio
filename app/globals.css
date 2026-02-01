@@ -1,0 +1,116 @@
+@import "tailwindcss";
+
+/* ========================================
+   Zen-OS Design System
+   Apple-inspired Light Theme
+   ======================================== */
+
+:root {
+  /* Colors - Light Theme */
+  --bg-primary: 250 100% 99%;
+  /* Almost white */
+  --bg-secondary: 242 100% 98%;
+  /* Light gray */
+  --bg-tertiary: 255 100% 100%;
+  /* Pure white */
+
+  --text-primary: 215 15% 15%;
+  /* Near black */
+  --text-secondary: 215 10% 45%;
+  /* Medium gray */
+  --text-tertiary: 215 8% 65%;
+  /* Light gray */
+
+  --accent: 212 100% 48%;
+  /* Apple blue */
+  --accent-hover: 212 100% 42%;
+
+  --success: 142 76% 36%;
+  /* Apple green */
+  --warning: 38 92% 50%;
+  /* Apple orange */
+  --error: 0 72% 51%;
+  /* Apple red */
+
+  --border: 214 15% 91%;
+  /* Subtle dividers */
+  --border-strong: 214 15% 85%;
+
+  --shadow: 0 0% 0%;
+  /* Black shadow */
+}
+
+@theme inline {
+  /* Backgrounds */
+  --color-bg-primary: hsl(var(--bg-primary));
+  --color-bg-secondary: hsl(var(--bg-secondary));
+  --color-bg-tertiary: hsl(var(--bg-tertiary));
+
+  /* Text */
+  --color-text-primary: hsl(var(--text-primary));
+  --color-text-secondary: hsl(var(--text-secondary));
+  --color-text-tertiary: hsl(var(--text-tertiary));
+
+  /* Accents */
+  --color-accent: hsl(var(--accent));
+  --color-accent-hover: hsl(var(--accent-hover));
+  --color-success: hsl(var(--success));
+  --color-warning: hsl(var(--warning));
+  --color-error: hsl(var(--error));
+
+  /* Borders */
+  --color-border: hsl(var(--border));
+  --color-border-strong: hsl(var(--border-strong));
+
+  /* Fonts */
+  --font-sans: var(--font-inter), 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono: 'SF Mono', 'Monaco', 'Cascadia Code', monospace;
+}
+
+body {
+  background: hsl(var(--bg-primary));
+  color: hsl(var(--text-primary));
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Typography */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+/* Smooth transitions */
+* {
+  transition-property: background-color, border-color, color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+  transition-duration: 200ms;
+}
+
+/* Frosted glass effect utility */
+.glass {
+  background: hsla(var(--bg-tertiary) / 0.8);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* Subtle shadows */
+.shadow-soft {
+  box-shadow: 0 2px 8px hsla(var(--shadow) / 0.06);
+}
+
+.shadow-soft-lg {
+  box-shadow: 0 8px 24px hsla(var(--shadow) / 0.08);
+}
+
+/* Focus states */
+*:focus-visible {
+  outline: 2px solid hsl(var(--accent));
+  outline-offset: 2px;
+}
